@@ -1,6 +1,6 @@
 from keras.models import Sequential
 from keras.layers import Activation,Dense,Dropout
-from keras.utils.np_utils import to_categorial
+from np_utils import to_categorical
 from keras.optimizers import Adagrad
 from keras.optimizers import Adam
 import numpy as np
@@ -16,7 +16,7 @@ for dir in os.listdir("data/train"):
   if dir == ".DS_Store":
     continue
 
-  dir1 = "data/train" + dir
+  dir1 = "data/train/" + dir
   label = 0
 
   if dir == "orion": #onionのlabel = 0
@@ -35,7 +35,7 @@ for dir in os.listdir("data/train"):
       # 配列を変換し、[[Redの配列],[Greenの配列],[Blueの配列]] のような形にする。
       image = image.transpose(2,0,1)
       #さらにフラットな1次元配列に変換、最初の1/3がred,次がgreen、最後がblueの要素がフラットに並ぶ
-      image = image.reshape(1,image.shape[0] * image.shape[1] * imageshape[2]).astype("float32")[0]
+      image = image.reshape(1,image.shape[0] * image.shape[1] * image.shape[2]).astype("float32")[0]
       #配列をimage_listに保存する
       image_list.append(image/255.)
 
@@ -43,7 +43,7 @@ for dir in os.listdir("data/train"):
 image_list = np.array(image_list)
 # 0 -> [1,0], 1 -> [0,1] という感じ。
 #ラベルの配列を1と0からなるラベル配列に変換する
-Y = to_categorial(label_list)
+Y = to_categorical(label_list)
 
 #モデルを生成してニューラルネットを構築
 model = Sequential()
@@ -69,11 +69,11 @@ model.fit(image_list,Y,nb_epoch=1500,batch_size = 100,validation_split=0.1)
 total = 0
 ok_count = 0
 
-for dir in os.listdir("data/train"):
+for dir in os.listdir("data/test"):
   if dir == ".DS_Store":
     continue
 
-  dir1 = "data/train/" + dir
+  dir2 = "data/test/" + dir
   label = 0
 
   if dir == "onion":
@@ -84,7 +84,7 @@ for dir in os.listdir("data/train"):
   for file in os.listdir(dir1):
     if file != ".DS_Store":
       label_list.append(label)
-      filepath = dir1 + "/" + filepath
+      filepath = dir2 + "/" + filepath
       image = np.array(Image.open(filepath).resize((25,25)))
       print(filepath)
       image = image.transpose(2,0,1)

@@ -6,4 +6,5 @@
 ・葉物野菜の見極めについて(https://www.slideshare.net/YujiKawakami3/by-keras)　
 ・勾配効果法の学習率の影響・活性化関数の影響・ニューラルネットワークの構成の影響(http://sonickun.hatenablog.com/entry/2016/07/11/202005)　
 ・分類系の全体の話の概要(http://sleeping-micchi.hatenablog.com/entry/2016/09/15/004221)
+・多クラスの分類(http://developer-blog.finc.co.jp/post/137854168027/deeplearning%E3%81%A7%E9%A3%9F%E4%BA%8B%E7%94%BB%E5%83%8F%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E5%88%86%E9%A1%9E%E5%99%A8%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F)
 

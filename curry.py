@@ -8,6 +8,21 @@ from PIL import Image
 import os
 
 # learning data
+def multi_layer_perceptron():
+  #モデルを生成してニューラルネットを構築
+  model = Sequential()
+  model.add(Dense(200,input_dim=1875)) # 入力層1875ノード, 隠れ層に200ノード, 全結合
+  model.add(Activation("relu")) #活性化関数relu
+  model.add(Dropout(0.2))
+
+  model.add(Dense(200)) #中間層200ノード
+  model.add(Activation("relu")) #活性化関数relu
+  model.add(Dropout(0.2))
+
+  model.add(Dense(2)) #出力層3ノード,全結合している
+  model.add(Activation("softmax"))
+
+  return model
 
 image_list = []
 label_list = []
@@ -45,24 +60,13 @@ image_list = np.array(image_list)
 #ラベルの配列を1と0からなるラベル配列に変換する
 Y = to_categorical(label_list)
 
-#モデルを生成してニューラルネットを構築
-model = Sequential()
-model.add(Dense(200,input_dim=1875))
-model.add(Activation("relu"))
-model.add(Dropout(0.2))
-
-model.add(Dense(200))
-model.add(Activation("relu"))
-model.add(Dropout(0.2))
-
-model.add(Dense(2))
-model.add(Activation("softmax"))
-
+model = multi_layer_perceptron()
 #optimizer → Adamを使用
 opt = Adam(lr=0.001)
 #compiling model
 model.compile(loss="categorical_crossentropy",optimizer=opt,metrics=["accuracy"])
 #学習の実行
+# epochs 繰り返し学習させる回数
 model.fit(image_list,Y,nb_epoch=1500,batch_size = 100,validation_split=0.1)
 
 #テスト用ディレクトリ(./data/train/)の画像でチェック、正答率を表示する

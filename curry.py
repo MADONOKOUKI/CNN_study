@@ -81,15 +81,15 @@ for dir in os.listdir("data/test"):
   elif dir == "carot":
     label = 1
 
-  for file in os.listdir(dir1):
+  for file in os.listdir(dir2):
     if file != ".DS_Store":
       label_list.append(label)
-      filepath = dir2 + "/" + filepath
+      filepath = dir2 + "/" + file
       image = np.array(Image.open(filepath).resize((25,25)))
       print(filepath)
       image = image.transpose(2,0,1)
       image = image.reshape(1,image.shape[0] * image.shape[1] * image.shape[2]).astype("float32")[0]
-      result = model.predict_classed(np.array([image/255.]))
+      result = model.predict_classes(np.array([image/255.]))
       print("label:",label,"result",result[0])
 
       total += 1.

@@ -8,6 +8,29 @@
 
 ## 2. 開発環境の準備
 
+
+```
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+```
+~/.zshrc(~/.bash_profile)に
+```
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+```
+を書き込み
+```
+pyenv install 3.6.0
+python3 global 3.6.0
+python3 --version
+```
+で
+```
+Python 3.6.0 :: Anaconda 4.3.1 (x86_64)
+```
+が出力されると環境は構成済み
+
+
 ## 3. 開発環境を動かす
 
 ```

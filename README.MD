@@ -4,15 +4,20 @@
 
 ## 0. 開発環境の構築と実行について
 
+
+
 ## 1. 依存ミドルウェアのセットアップ (Dockerによる開発環境を構築している場合は以下は不要。)
 
 ## 2. 開発環境の準備
-
+```
+git clone git@github.com:fchollet/keras.git
+```
+でkerasのインストール
 
 ```
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 ```
-~/.zshrc(~/.bash_profile)に
+.zshrc(.bash_profile)に
 ```
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH

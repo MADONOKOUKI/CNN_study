@@ -38,6 +38,8 @@ for dir in os.listdir("data/train"):
     label = 0
   elif dir == "carot": #carotのlabel = 0
     label = 1
+  else:
+    continue
   for file in os.listdir(dir1):
     if file != ".DS_Store":
       # 配列label_listに正解ラベルを追加(りんご:0 オレンジ:1)
@@ -48,18 +50,22 @@ for dir in os.listdir("data/train"):
       image = np.array(Image.open(filepath).resize((25,25)))
       print(filepath)
       # 配列を変換し、[[Redの配列],[Greenの配列],[Blueの配列]] のような形にする。
+      print(image.shape)
       image = image.transpose(2,0,1)
       #さらにフラットな1次元配列に変換、最初の1/3がred,次がgreen、最後がblueの要素がフラットに並ぶ
+      print(image.shape)
       image = image.reshape(1,image.shape[0] * image.shape[1] * image.shape[2]).astype("float32")[0]
       #配列をimage_listに保存する
+      print(image.shape)
       image_list.append(image/255.)
 
 # kerasに渡すためにnumpy配列に変換
 image_list = np.array(image_list)
+print(image_list.shape)
 # 0 -> [1,0], 1 -> [0,1] という感じ。
 #ラベルの配列を1と0からなるラベル配列に変換する
 Y = to_categorical(label_list)
-
+print(Y.shape)
 model = multi_layer_perceptron()
 #optimizer → Adamを使用
 opt = Adam(lr=0.001)

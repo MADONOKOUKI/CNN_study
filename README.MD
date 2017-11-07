@@ -37,6 +37,12 @@ Python 3.6.0 :: Anaconda 4.3.1 (x86_64)
 
 
 ## 3. 開発環境を動かす
+** 画像の収集方法
+```
+python3 download_pic.py [検索したい画像の名前]
+```
+* 保存ディレクトリを指定して画像を自動保存
+* 今回はyahoo!の検索エンジンを使用（googleだとAPIを使用すると可能）
 
 ```
 python3 curry.py
@@ -76,3 +82,5 @@ python3 curry.py
 pip install grip
 grip -b
 ```
+**Vimの練習サイトについて**
+* [vimtutor](https://qiita.com/y-temp4/items/3032d22cb5cc6ae3117a)

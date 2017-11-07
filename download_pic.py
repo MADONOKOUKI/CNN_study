@@ -31,7 +31,7 @@ fetcher = Fetcher(MY_EMAIL_ADDR)
 
 
 def fetch_and_save_img(word):
-    data_dir = 'data/' + word
+    data_dir = 'data/train/' + word
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
 

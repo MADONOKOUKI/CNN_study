@@ -48,6 +48,11 @@ python3 download_pic.py [検索したい画像の名前]
 python3 curry.py
 ```
 
+```
+python3 make_curry.py
+```
+* refrigerator_of_foodの中に今冷蔵庫の中に入っている食材の画像を保存しておくとする
+
 * 訓練データを色別に保存
 * optimizer`adam`を使用して各種パラメータを設定
 * テストデータを使用して判定（精度約73%)
@@ -68,6 +73,10 @@ python3 curry.py
 * [各検索エンジンでのスクレイピングについて](https://qiita.com/ysdyt/items/565a0bf3228e12a2c503)
 * [スクレイピングのコードについて](http://karaage.hatenadiary.jp/entry/2017/08/23/073000)
 
+**画像認識系参考サイト**
+
+* [CNNの実装についてのまとめ](https://qiita.com/icoxfog417/items/5aa1b3f87bb294f84bac)
+* [ssd_kerasによる物体認識の手順](http://ai-coordinator.jp/ssd_keras-ubuntu)
 
 **参考論文・調査**
 

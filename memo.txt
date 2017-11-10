@@ -1,0 +1,17 @@
+### 11/10
+
+* 数千~数万の写真データが必要
+* data argumentation
+
+
+何通りか層を組んで見る
+
+量を増やす（画像を機械学習で増やすのはどうなんだろうか.....)
+CNN
+反転・回転で見かけ上のデータ
+
+* サーバーを使用する
+
+cross_validationを使用する(python3のsklearnがあるからそれを使用してaccuracy_rateを算出する)
+[cross_validationの使用方法](http://scikit-learn.org/stable/modules/cross_validation.html)
+

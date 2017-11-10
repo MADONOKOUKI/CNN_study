@@ -54,31 +54,32 @@ for dir in os.listdir("data/train"):
       # [R,G,B]はそれぞれが0-255の配列。
       image = np.array(Image.open(filepath).resize((25,25)))
       # print(filepath)
-      # print(image.shape,image.dtype) # (行数、列数、色数) / データタイプ
+      print(image.shape,image.dtype) # (行数、列数、色数) / データタイプ
       # 配列を変換し、[[Redの配列],[Greenの配列],[Blueの配列]] のような形にする。
       image = image.transpose(2,0,1)
       #さらにフラットな1次元配列に変換、最初の1/3がred,次がgreen、最後がblueの要素がフラットに並ぶ
-      # print(image)
-      # print(image.shape)
-      # print(image.shape[0],image.shape[1],image.shape[2])
-      # print(image.reshape(1,image.shape[0] * image.shape[1] * image.shape[2]).astype("float32"))
+      print(image)
+      print(image.shape)
+      print(image.shape[0],image.shape[1],image.shape[2])
+      print(image.reshape(1,image.shape[0] * image.shape[1] * image.shape[2]).astype("float32"))
       #横一直線にして、最後に外側の配列を外している
       image = image.reshape(1,image.shape[0] * image.shape[1] * image.shape[2]).astype("float32")[0]
       #配列をimage_listに保存する
-      # print(image)
+      print(image)
       #輝度は0-255で表現するので、255のfloat型で割って、正規化している
       image_list.append(image/255.)
-      # print(image/255.)
+      print(image/255.)
 
 # kerasに渡すためにnumpy配列に変換
 image_list = np.array(image_list)
-# print(image_list.shape)
+print(image_list.shape)
 # 0 -> [1,0], 1 -> [0,1] という感じ。
 #ラベルの配列を1と0からなるラベル配列に変換する
 Y = to_categorical(label_list)
 # Y = np_utils.to_categorical(label_list)
-# print(Y.shape,Y.dtype)
+print(Y.shape,Y.dtype)
 model = multi_layer_perceptron()
+# model.summary()
 #optimizer → Adamを使用
 opt = Adam(lr=0.001)
 #compiling model
@@ -87,6 +88,7 @@ model.compile(loss="binary_crossentropy",optimizer=opt,metrics=["accuracy"])
 # epochs 繰り返し学習させる回数
 model.fit(image_list,Y,nb_epoch=1500,batch_size = 100,validation_split=0.1)
 
+# model.save('vegitable.hdf5')
 # #テスト用ディレクトリ(./data/train/)の画像でチェック、正答率を表示する
 # total = 0
 ok_count = 0

@@ -24,6 +24,28 @@ def multi_layer_perceptron():
 
   return model
 
+# from keras.models import Sequential
+# from keras.layers import Dense, Dropout, Flatten
+# from keras.layers import Conv2D, MaxPooling2D
+# def multi_layer_perceptron():
+#     model = Sequential()
+#     model.add(Dense(200,input_dim=1875)) # 入力層1875ノード, 隠れ層に200ノード, 全結合
+#     model.add(Activation("relu")) #活性化関数relu
+#     model.add(Dropout(0.2))
+
+#     # model.add(Conv2D(32, kernel_size=(3, 3),
+#     #                  activation='relu',
+#     #                  input_shape=(3, 25, 25)))
+#     # model.add(Conv2D(64, (3, 3), activation='relu'))
+#     # model.add(MaxPooling2D(pool_size=(2, 2)))
+#     # model.add(Dropout(0.25))
+#     model.add(Flatten())
+#     model.add(Dense(128, activation='relu'))
+#     model.add(Dropout(0.5))
+#     model.add(Dense(Activation='softmax'))
+
+#     return model
+
 image_list = []
 label_list = []
 

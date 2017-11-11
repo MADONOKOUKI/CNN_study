@@ -92,6 +92,8 @@ model = multi_layer_perceptron()
 #optimizer → Adamを使用
 opt = Adam(lr=0.001)
 #compiling model
+# マルチクラス分類問題の場合
+model.compile(optimizer='rmsprop',loss='categorical_crossentropy',metrics=['accuracy'])
 model.compile(loss="categorical_crossentropy",optimizer=opt,metrics=["accuracy"])
 #学習の実行
 # epochs 繰り返し学習させる回数

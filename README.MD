@@ -77,6 +77,7 @@ python3 make_curry.py
 
 * [CNNの実装についてのまとめ](https://qiita.com/icoxfog417/items/5aa1b3f87bb294f84bac)
 * [ssd_kerasによる物体認識の手順](http://ai-coordinator.jp/ssd_keras-ubuntu)
+* [画像の拡大・回転](http://www.mathgram.xyz/entry/keras/preprocess/img)
 
 **参考論文・調査**
 

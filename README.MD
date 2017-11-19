@@ -4,7 +4,10 @@
 
 ## 0. 開発環境の構築と実行について
 
-
+* pyenv(/Users/ユーザー名/.pyenv/versions/anaconda3-4.3.1/bin/python3)
+* keras
+* tensorflow
+* anaconda
 
 ## 1. 依存ミドルウェアのセットアップ (Dockerによる開発環境を構築している場合は以下は不要。)
 
@@ -78,12 +81,21 @@ python3 make_curry.py
 * [CNNの実装についてのまとめ](https://qiita.com/icoxfog417/items/5aa1b3f87bb294f84bac)
 * [ssd_kerasによる物体認識の手順](http://ai-coordinator.jp/ssd_keras-ubuntu)
 * [画像の拡大・回転](http://www.mathgram.xyz/entry/keras/preprocess/img)
+* [kerasで自分が拾った画像をCNNにかける](https://qiita.com/haru1977/items/17833e508fe07c004119)
+
 
 **参考論文・調査**
 
 * [モバイルレシピ推薦システム](https://mm.cs.uec.ac.jp/pub/conf11/120306maruyama_5_ppt.pdf)
 * [Food Image recognition by using convolutional neural network](https://arxiv.org/pdf/1612.00983.pdf)
 
+**jupyter notebook実装系**
+
+* [cross validationの実装方法](https://qiita.com/kenmatsu4/items/0a862a42ceb178ba7155)
+
+**data arumenation**
+
+* [画像の回転・反転](http://python-remrin.hatenadiary.jp/entry/2017/05/20/181211)
 
 ## 備考
 

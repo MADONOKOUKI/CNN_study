@@ -4,6 +4,11 @@
 # ディレクトリは最後にスラッシュ
 /data
 /paper
+.gitignore
+.python-version
+a.out
+/__pycache__
+vegitable.hdf5
 # vim のバックアップファイル
 # * は展開される
 *.swp

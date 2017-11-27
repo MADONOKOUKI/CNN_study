@@ -17,3 +17,20 @@ cross_validationを使用する(python3のsklearnがあるからそれを使用�
 
 * .gitignoreを反映
 [.gitignoreの反映させる方法について](https://qiita.com/colorrabbit/items/464878f8fb61922e5b9d)
+
+
+*
+・明るさを調節して検出
+・Tensorflow
+・画像の平均化（OpenCV)
+・どうモデルを作成するか？
+
+・[](https://www.kaggle.com/c/imagenet-object-detection-challenge)
+https://www.google.co.jp/search?ei=KMAXWsLSL4Oq0gTaxp_QAg&q=IILSVRC&oq=IILSVRC&gs_l=psy-ab.3..0i13k1l10.1935.2239.0.2644.2.2.0.0.0.0.289.559.2-2.2.0....0...1c.1.64.psy-ab..0.2.558...0i13i10k1.0.X9Txpu_hAIQ
+・12月までにこれを回せばいいまでのところまで行っておく
+→それまでにtensorflowをしっかり作っておく、
+
+来週はモデルをたくさん作成しておく
+・コアを1コアだけでなく多く使用する
+・well-known port を使用する
+・http://image-net.org/challenges/beyond_ilsvrc

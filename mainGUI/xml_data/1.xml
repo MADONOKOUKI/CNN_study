@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotation>
+  <folder>XXX</folder>
+  <filename>1.jpg</filename>
+  <source>
+    <database>XXX</database>
+    <annotation>XXX</annotation>
+    <image>XXX</image>
+    <flickrid>XXX</flickrid>
+  </source>
+  <owner>
+    <flickrid>XXX</flickrid>
+    <name>?</name>
+  </owner>
+  <size>
+    <width>480</width>
+    <height>360</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>carot</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>1</difficult>
+    <bndbox>
+      <xmin>157</xmin>
+      <ymin>5</ymin>
+      <xmax>280</xmax>
+      <ymax>341</ymax>
+    </bndbox>
+  </object>
+</annotation>

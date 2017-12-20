@@ -12,6 +12,7 @@ from .. import initializers
 
 
 class Merge(Layer):
+    print(Layer)
     """A `Merge` layer can be used to merge a list of tensors
     into a single tensor, following some merge `mode`.
     # Example
@@ -127,6 +128,8 @@ class Merge(Layer):
         """Validates user-passed arguments and raises exceptions
         as appropriate.
         """
+        print(node_indices)
+        print(tensor_indices)
         if not callable(mode):
             if mode not in {'sum', 'mul', 'concat', 'ave', 'cos', 'dot', 'max'}:
                 raise ValueError('Invalid merge mode: ' + str(mode))
@@ -181,6 +184,7 @@ class Merge(Layer):
         elif mode == 'concat':
             reduced_inputs_shapes = [list(shape) for shape in input_shapes]
             shape_set = set()
+            # print(shape_set)
             for i in range(len(reduced_inputs_shapes)):
                 del reduced_inputs_shapes[i][self.concat_axis]
                 shape_set.add(tuple(reduced_inputs_shapes[i]))
